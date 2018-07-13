@@ -12,21 +12,29 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log('componentDidMount called');
-    $.ajax({
-      type: 'POST',
-      url: '/repos',
-      data: '',
-      contentType: 'application/json',
-      success: () => {console.log('POST request sent');},
-      error: () => {console.log('AJAX POST FAILED');}
-    });
-  }
+  // componentDidMount() {
+  //   console.log('componentDidMount called');
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: '/repos',
+      
+  //     success: () => {console.log('get request in componentDidMount success');},
+  //     error: () => {console.log('ger request in componentDidMount failed');}
+  //   });
+  // }
 
   search (term) {
+
     console.log(`${term} was searched`);
-    // TODO
+    $.ajax({
+      method: 'POST',
+      url: '/repos',
+      data: {username: term},
+      success: function() {
+        console.log('search for username request success');
+      },
+      error: () => {console.log('search for username request failed');} 
+    });
   }
 
   render () {

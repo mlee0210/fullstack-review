@@ -7,8 +7,14 @@ let getReposByUsername = (username) => {
   // The options object has been provided to help you out, 
   // but you'll have to fill in the URL
 
+  console.log('inside getReposByUsername');
+  console.log('username: ', username);
+/*
+You can use the github api for this. Hitting https://api.github.com/users/username/repos 
+will list that user's public repositories  
+*/   
   let options = {
-    url: 'username.owner.html_url',
+    url: 'https://api.github.com/users/${username}/repos',
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${config.TOKEN}`

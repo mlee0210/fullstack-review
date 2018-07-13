@@ -5,7 +5,7 @@ let repoSchema = mongoose.Schema({
   // TODO: your schema here!
   id: Number,
   full_name: String,
-  url: String,
+  html_url: String,
   description: String
 });
 
