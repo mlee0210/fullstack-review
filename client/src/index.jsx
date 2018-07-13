@@ -10,7 +10,18 @@ class App extends React.Component {
     this.state = { 
       repos: []
     }
+  }
 
+  componentDidMount() {
+    console.log('componentDidMount called');
+    $.ajax({
+      type: 'POST',
+      url: '/repos',
+      data: '',
+      contentType: 'application/json',
+      success: () => {console.log('POST request sent');},
+      error: () => {console.log('AJAX POST FAILED');}
+    });
   }
 
   search (term) {
