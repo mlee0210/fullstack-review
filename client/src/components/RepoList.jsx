@@ -20,8 +20,8 @@ const RepoList = (props) => (
          return (
            <tr key={repo._id}>
              <td>{repo.id}</td>
-             <td>{repo.name}</td>
-             <td><a href={repo.html_url}>{repo.html_url}</a></td>
+             <td><a href={repo.html_url}>{repo.name}</a></td>
+             <td>{repo.html_url}</td>
              <td>{repo.description}</td>
              <td>{repo.forks}</td>
             

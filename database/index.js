@@ -48,6 +48,7 @@ let save = (reposInString) => {
   
 }
 
+//sort by highest number of forks
 let sortRepos = (callback) => {
 
   Repo.find((err, results) => {
@@ -59,7 +60,7 @@ let sortRepos = (callback) => {
     }
   })
   .limit(25)
-  .sort({'forks': 1});
+  .sort({'forks': -1});
 }
 
 
