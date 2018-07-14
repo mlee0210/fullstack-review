@@ -48,5 +48,36 @@ let save = (reposInString) => {
   
 }
 
+let sortRepos = (callback) => {
+
+  Repo.find((err, results) => {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log('found Repos');
+      callback(results);
+    }
+  })
+  .limit(25)
+  .sort({'forks': 1});
+}
+
 
 module.exports.save = save;
+module.exports.sortRepos = sortRepos;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

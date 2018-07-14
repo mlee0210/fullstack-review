@@ -12,16 +12,16 @@ class App extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   console.log('componentDidMount called');
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: '/repos',
+  componentDidMount() {
+    console.log('componentDidMount called');
+    $.ajax({
+      method: 'GET',
+      url: '/repos',
       
-  //     success: () => {console.log('get request in componentDidMount success');},
-  //     error: () => {console.log('ger request in componentDidMount failed');}
-  //   });
-  // }
+      success: (retrievedRepos) => { this.setState({repos: retrievedRepos})},
+      error: () => {console.log('ger request in componentDidMount failed');}
+    });
+  }
 
   search (term) {
 
